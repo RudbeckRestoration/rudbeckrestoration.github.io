@@ -1,0 +1,107 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #c8102e;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      margin: 5px;
+      width: 25px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #c8102e;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      background: #ecf0f1;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .hero button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      padding: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #c8102e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
