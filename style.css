@@ -3,7 +3,7 @@ body {
   background: #f4f4f4;
   color: #333;
   font-family: Arial, sans-serif;
-  padding-top: 80px; /* to prevent header overlap */
+  padding-top: 80px; /* header height buffer */
 }
 
 header {
@@ -28,14 +28,14 @@ header {
 .icon-bar {
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .icon {
   width: 24px;
   height: 24px;
   filter: brightness(0) invert(1);
-  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 0.5rem;
 }
 
 .menu-button {
@@ -45,45 +45,34 @@ header {
   cursor: pointer;
 }
 
-nav {
-  display: flex;
-  gap: 1rem;
+#navMenu {
+  display: none;
+  flex-direction: column;
+  background: #c8102e;
   position: absolute;
   top: 100%;
   right: 0;
-  background: #c8102e;
   width: 100%;
-  flex-direction: column;
   padding: 1rem 2rem;
-  display: none;
+  z-index: 9;
 }
 
-nav.active {
+#navMenu.active {
   display: flex;
 }
 
-nav a {
-  color: #fff;
+#navMenu a {
+  color: white;
   text-decoration: none;
-  padding: 0.5rem 0;
+  padding: 0.75rem 0;
+  display: flex;
+  align-items: center;
 }
 
-/* Prevent desktop nav from being hidden */
 @media (min-width: 769px) {
-  nav {
-    position: static;
-    background: none;
-    display: flex !important;
-    flex-direction: row;
-    padding: 0;
-  }
-
-  nav a {
-    padding: 0;
-  }
-
-  .menu-button {
-    display: none;
+  .menu-button,
+  #navMenu {
+    display: none !important;
   }
 }
 
