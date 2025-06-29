@@ -10,22 +10,18 @@
 <body>
   <header>
     <img src="logo.svg" alt="Store Logo" class="logo" />
-
     <div class="icon-bar">
-      <a href="#"><img src="search.svg" alt="Search" class="icon" /></a>
-      <a href="#"><img src="cart.svg" alt="Cart" class="icon" /></a>
-      <a href="#"><img src="profile-default.svg" alt="Profile" class="icon" /></a>
       <button class="menu-button" onclick="toggleMenu()">
         <img id="menuIcon" src="menu-closed.svg" alt="Menu" class="icon" />
       </button>
     </div>
-
-    <nav id="navMenu">
-      <a href="#">Home</a>
-      <a href="#">Products</a>
-      <a href="#">Contact</a>
-    </nav>
   </header>
+
+  <nav id="navMenu">
+    <a href="#"><img src="search.svg" alt="Search" class="icon" />Search</a>
+    <a href="#"><img src="cart.svg" alt="Cart" class="icon" />Cart</a>
+    <a href="#"><img src="profile-default.svg" alt="Profile" class="icon" />Profile</a>
+  </nav>
 
   <main>
     <section class="hero">
@@ -61,8 +57,8 @@
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
       const icon = document.getElementById('menuIcon');
-      nav.classList.toggle('active');
-      icon.src = nav.classList.contains('active') ? 'menu-open.svg' : 'menu-closed.svg';
+      const isOpen = nav.classList.toggle('active');
+      icon.src = isOpen ? 'menu-open.svg' : 'menu-closed.svg';
     }
   </script>
 </body>
