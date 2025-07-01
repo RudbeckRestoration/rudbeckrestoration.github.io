@@ -15,16 +15,30 @@
   <header>
     <img src="logo.svg" alt="Store Logo" class="logo" />
     <div class="icon-bar">
-      <button class="menu-button" onclick="toggleMenu()">
-        <img id="menuIcon" src="menu-closed.svg" alt="Menu" class="icon" />
+      <button class="menu-button" onclick="toggleMenu()" aria-label="Toggle menu">
+        <svg id="menuClosedIcon" class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+        <svg id="menuOpenIcon" class="icon" style="display: none;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 6l12 12M6 18L18 6" />
+        </svg>
       </button>
     </div>
   </header>
 
   <nav id="navMenu">
-    <a href="#"><img src="search.svg" alt="Search" class="icon" />Search</a>
-    <a href="#"><img src="cart.svg" alt="Cart" class="icon" />Cart</a>
-    <a href="#"><img src="profile-default.svg" alt="Profile" class="icon" />Profile</a>
+    <a href="#">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Search
+    </a>
+    <a href="#">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M6 6h15l-1.5 9h-13z"/><circle cx="9" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+      Cart
+    </a>
+    <a href="#">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+      Profile
+    </a>
   </nav>
 
   <main>
@@ -56,12 +70,16 @@
   <footer>
     <p>&copy; 2025 StoreFront. All rights reserved.</p>
   </footer>
+
   <script>
     function toggleMenu() {
       const nav = document.getElementById('navMenu');
-      const icon = document.getElementById('menuIcon');
+      const menuClosed = document.getElementById('menuClosedIcon');
+      const menuOpen = document.getElementById('menuOpenIcon');
       const isOpen = nav.classList.toggle('active');
-      icon.src = isOpen ? 'menu-open.svg' : 'menu-closed.svg';
+
+      menuClosed.style.display = isOpen ? 'none' : 'inline';
+      menuOpen.style.display = isOpen ? 'inline' : 'none';
     }
   </script>
 </body>
