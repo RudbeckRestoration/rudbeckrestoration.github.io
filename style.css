@@ -3,7 +3,7 @@ body {
   background: #f4f4f4;
   color: #333;
   font-family: Arial, sans-serif;
-  padding-top: 80px; /* header height buffer */
+  padding-top: 80px;
 }
 
 header {
@@ -33,7 +33,7 @@ header {
 .icon {
   width: 24px;
   height: 24px;
-  filter: brightness(0) invert(1);
+  fill: white;
   vertical-align: middle;
   margin-right: 0.5rem;
 }
@@ -43,6 +43,8 @@ header {
   border: none;
   padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 #navMenu {
